@@ -143,7 +143,7 @@ ssr_link_qr(){
 	SSRprotocol=$(echo ${protocol} | sed 's/_compatible//g')
 	SSRobfs=$(echo ${obfs} | sed 's/_compatible//g')
 	SSRPWDbase64=$(urlsafe_base64 "${password}")
-	SSRobfsparam=$(urlsafe_base64 "${ip}.xip.io")
+	SSRobfsparam=$(urlsafe_base64 "${domain}")
 	SSRbase64=$(urlsafe_base64 "${ip}:${port}:${SSRprotocol}:${method}:${SSRobfs}:${SSRPWDbase64}/?obfsparam=${SSRobfsparam}")
 	SSRurl="ssr://${SSRbase64}"
 	SSRQRcode="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${SSRurl}"
