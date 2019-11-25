@@ -1192,8 +1192,7 @@ Install_Auto(){
 	apt-get install -y curl
 	echo && stty erase '^H' && read -p "输入域名(提前绑定到VPS IP): " domain
 	[[ -z ${domain} ]] && echo "域名为空，使用自带免费域名" && curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash
-	[[ -n ${domain} ]] && curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash
-	curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash -s $domain
+	[[ -n ${domain} ]] && curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash -s $domain
 	Install_SSR
 }
 check_sys
