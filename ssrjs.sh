@@ -1188,11 +1188,12 @@ menu_status(){
 
 Install_Auto(){
 	libsodium_install
-	
 	apt-get update -y
 	apt-get install -y curl
+	echo && stty erase '^H' && read -p "输入域名(提前绑定到VPS IP): " domain
+	[[ -z ${domain} ]] && echo "域名为空，使用自带免费域名" && curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash
+	[[ -n ${domain} ]] && curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash
 	curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash
-
 	Install_SSR
 }
 check_sys
