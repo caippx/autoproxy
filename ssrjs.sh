@@ -515,7 +515,7 @@ Write_configuration(){
     "local_address": "127.0.0.1",
     "local_port": 1080,
 
-    "password": "somebody",
+    "password": "ppxwo.com",
     "method": "chacha20-ietf",
     "protocol": "auth_aes128_md5",
     "protocol_param": "",
