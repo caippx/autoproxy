@@ -517,7 +517,7 @@ Write_configuration(){
 
     "password": "somebody",
     "method": "chacha20-ietf",
-    "protocol": "origin",
+    "protocol": "auth_aes128_md5",
     "protocol_param": "",
     "obfs": "tls1.2_ticket_auth",
     "obfs_param": "",
