@@ -1191,9 +1191,11 @@ Install_Auto(){
 	apt-get update -y
 	apt-get install -y curl
 	echo && stty erase '^H' && read -p "输入域名(提前绑定到VPS IP): " domain
+	echo && stty erase '^H' && read -p "网页内容: " txt
 	[[ -z ${domain} ]] && echo "域名为空，使用自带免费域名" && curl https://raw.githubusercontent.com/caippx/jsproxy/0.1.0/i.sh | bash
 	[[ -n ${domain} ]] && curl https://raw.githubusercontent.com/caippx/jsproxy/0.1.0/i.sh | bash -s $domain
 	Install_SSR
+	cd /home/jsproxy/server/www && rm -rf * && echo $txt > 404.html
 }
 check_sys
 [[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && [[ ${release} != "centos" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit 1
